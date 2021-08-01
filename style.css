@@ -15,13 +15,21 @@ html {
   font-size: 62.5%;
 }
 body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: linear-gradient(var(--mountain-meadow), var(--trypan-blue));
   background-repeat: no-repeat;
 }
 
+/* ------------- */
+/* Header Styles */
+/* ------------- */
 .header {
   display: flex;
   width: 100%;
+  margin-top: 20px;
   align-items: center;
   justify-content: space-between;
   font-size: var(--regular);
@@ -30,7 +38,6 @@ body {
 .header__img {
   height: 80px;
   margin-left: 20px;
-  margin-top: 20px;
 }
 .header__menu {
   margin-right: 20px;
@@ -67,19 +74,21 @@ body {
   display: block;
 }
 
+/* ----------- */
+/* Main Styles */
+/* ----------- */
 .main {
   width: 100%;
   text-align: center;
 }
 .main__title {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px;
   font-size: var(--title);
   color: var(--white);
 }
 .input {
   height: 50px;
-  width: 70%;
+  width: 85%;
   padding: 0px 20px;
   border: 2px solid var(--white);
   border-radius: 30px;
@@ -96,7 +105,6 @@ body {
   box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.3);
 }
 .input:focus {
-  width: 70%;
   box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -177,6 +185,9 @@ body {
   background:transparent;
 }
 
+/* ------------------------- */
+/* Login and Register Styles */
+/* ------------------------- */
 .login {
   min-height: calc(100vh - 200px);
   display: flex;
@@ -269,6 +280,10 @@ body {
   font-size: 1.5rem;
   font-weight: 700;
 }
+
+/* ------------- */
+/* Footer Styles */
+/* ------------- */
 .footer {
   display: flex;
   align-items: center;
@@ -287,6 +302,9 @@ body {
   text-decoration: underline;
 }
 
+/* ------------------------- */
+/* 404 Page Not Found Styles */
+/* ------------------------- */
 .not-found {
   display: flex;
   flex-direction: column;
@@ -310,9 +328,9 @@ body {
   }
 }
 .not-found__title {
-  position: absolute;
-  top: 520px;
   font-size: 3.5rem;
   letter-spacing: 1px;
   color: var(--white);
+  animation: float 3s ease-in-out infinite;
+  transition: all 0.3s ease-in-out;
 }
