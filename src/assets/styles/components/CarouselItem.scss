@@ -1,0 +1,33 @@
+@import "../Vars.scss";
+
+.carousel-item__details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+  font-size: 1.2rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+  transition: 450ms opacity;
+}
+.carousel-item__details:hover {
+  opacity: 1;
+}
+.carousel-item__details--icon {
+  width: 25px;
+  height: 25px;
+}
+.carousel-item__details p {
+  color: $white
+}
+.carousel-item__details--title {
+  font-weight: 700;
+}
+.carousel::-webkit-scrollbar {
+  background:transparent;
+}

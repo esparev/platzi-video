@@ -1,0 +1,47 @@
+@import "../Vars.scss";
+
+.carousel {
+  position: relative;
+  width: 100%;
+  padding: 30px;
+  overflow-x: scroll;
+}
+.carousel__title {
+  width: 100%;
+  font-size: 2rem;
+  font-weight: 700;
+  color: $white;
+}
+.carousel__container {
+  margin: 70px 0px;
+  padding-bottom: 10px;
+  white-space: nowrap;
+}
+.carousel-item {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 250px;
+  margin-right: 10px;
+  border-radius: 20px;
+  background-color: $white;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 450ms;
+  transform-origin: center left;
+}
+.carousel-item__img {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+}
+.carousel-item:hover ~ .carousel-item {
+  transform: translate3d(100px, 0, 0);
+}
+.carousel__container:hover .carousel-item {
+  opacity: 0.3;
+}
+.carousel__container:hover .carousel-item:hover {
+  transform: scale(1.5);
+  opacity: 1;
+}

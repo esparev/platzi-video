@@ -1,0 +1,49 @@
+@import "../Vars.scss";
+
+.header {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: space-between;
+  font-size: $regular;
+  font-weight: 700;
+}
+.header__img {
+  height: 80px;
+  margin-left: 20px;
+}
+.header__menu {
+  margin-right: 20px;
+}
+.header__menu--profile {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  color: $white;
+}
+.header__menu--profile img {
+  margin-right: 10px;
+}
+.header__menu ul {
+  position: absolute;
+  display: none;
+  width: 100px;
+  margin: 0px;
+  padding: 0;
+  list-style: none;
+  text-align: right;
+}
+.header__menu li {
+  margin: 10px 0px;
+}
+.header__menu li a {
+  text-decoration: none;
+  color: $white;
+}
+.header__menu li a:hover {
+  text-decoration: underline;
+}
+.header__menu:hover ul, ul:hover {
+  display: block;
+}
