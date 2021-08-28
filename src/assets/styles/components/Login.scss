@@ -1,0 +1,94 @@
+@import "../Vars.scss";
+
+.login {
+  min-height: calc(100vh - 200px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+}
+.login__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 450px;
+  min-height: 600px;
+  padding: 60px 60px 40px;
+  border: 2px solid $white;
+  border-radius: 40px;
+  font-size: $regular;
+  color: $white;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.3);
+}
+.login__container h2 {
+  margin-bottom: 20px;
+  font-size: $title;
+  text-align: center;
+}
+.login__container--form {
+  display: flex;
+  flex-direction: column;
+}
+.login__container--form input {
+  margin-bottom: 20px;
+}
+.login__container--form .login-input {
+  height: 50px;
+  padding-left: 10px;
+  border: 0;
+  border-bottom: 2px solid $white;
+  color: $white;
+  outline: none;
+  background-color: transparent;
+}
+.login__container--form .button {
+  height: 50px;
+  margin-bottom: 20px;
+  padding: 0px 20px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: $white;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.login__container--form .login-input::placeholder {
+  color: $white;
+}
+.login__container--remember-me {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  color: $white;
+}
+.login__container a {
+  color: $white;
+  text-decoration: none;
+}
+.login__container a:hover {
+  text-decoration: underline;
+}
+.login__container--social-media {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+.login__container--social-media > div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.login__container--social-media > div > img {
+  height: 35px;
+  margin-right: 10px;
+}
+.login__container--register {
+  text-align: center;
+}
+.login__container--register a {
+  font-size: 1.5rem;
+  font-weight: 700;
+}

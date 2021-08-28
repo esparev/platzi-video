@@ -39,7 +39,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|gif|jpg)$/,
+        test: /\.(png|gif|jpg|svg)$/,
         use: [
           {
             loader: "file-loader",
@@ -50,6 +50,10 @@ module.exports = {
         ],
       },
     ],
+  },
+  devServer: {
+    open: true,
+    historyApiFallback: true,
   },
   plugins: [
     new HtmlWebPackPlugin({
