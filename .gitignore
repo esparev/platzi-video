@@ -73,4 +73,4 @@ typings/
 yarn-error.log
 
 # Build
-archive/
+dist/
