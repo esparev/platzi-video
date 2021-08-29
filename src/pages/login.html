@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/styles/main.css" />
+    <link
+      rel="stylesheet"
+      href="../assets/styles/mobile.css"
+      media="(max-width: 500px)"
+    />
+    <title>Log In · PlatziVideo</title>
+  </head>
+  <body>
+    <header class="header">
+      <a href="../../public/index.html">
+        <img
+          tabindex="0"
+          class="header__img"
+          src="../assets/static/logo-platzi-video.png"
+          alt="PlatziVideo"
+        />
+      </a>
+    </header>
+
+    <section class="login">
+      <div class="login__container">
+        <h2 tabindex="1">Log In to PlatziVideo</h2>
+        <form class="login__container--form">
+          <input class="login-input" type="text" placeholder="Email" />
+          <input class="login-input" type="password" placeholder="Password" />
+          <button class="button">Log In</button>
+          <div class="login__container--remember-me">
+            <label>
+              <input type="checkbox" id="cbox1" value="checkbox" />Remember Me
+            </label>
+            <a href="#">Forgot my password</a>
+          </div>
+        </form>
+        <div class="login__container--social-media">
+          <div>
+            <img
+              src="../assets/static/google-icon.png"
+              alt="Google Icon"
+            />Continue with Google
+          </div>
+          <div>
+            <img
+              src="../assets/static/twitter-icon.png"
+              alt="Twitter Icon"
+            />Continue with Twitter
+          </div>
+        </div>
+        <p class="login__container--register">
+          Don't have an account yet? <a href="./register.html">Register</a>
+        </p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <a href="#">Terms of use</a>
+      <a href="#">Privacy Statement</a>
+      <a href="#">Help Center</a>
+    </footer>
+  </body>
+</html>
