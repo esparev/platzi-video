@@ -15,10 +15,10 @@ const Header = () => (
       </div>
       <ul>
         <li>
-          <a href="../404.html">Account</a>
+          <a href="../src/pages/notFound.html">Account</a>
         </li>
         <li>
-          <a href="../login.html">Log out</a>
+          <a href="../src/pages/login.html">Log out</a>
         </li>
       </ul>
     </div>
