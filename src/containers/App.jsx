@@ -7,7 +7,7 @@ import Footer from "../components/Footer.jsx";
 import useInitialState from "../hooks/useInitialState.js";
 import "../assets/styles/App.scss";
 
-const API = "http://localhost:3000/initialState";
+const API = process.env.API;
 
 const App = () => {
   const initialState = useInitialState(API);
