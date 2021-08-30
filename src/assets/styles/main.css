@@ -113,6 +113,7 @@ body {
   width: 100%;
   padding: 30px;
   overflow-x: scroll;
+  scrollbar-width: none;
 }
 .carousel__title {
   width: 100%;

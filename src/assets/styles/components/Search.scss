@@ -1,0 +1,32 @@
+@import "../Vars.scss";
+
+.main {
+  width: 100%;
+  text-align: center;
+}
+.main__title {
+  margin: 20px;
+  font-size: $title;
+  color: $white;
+}
+.input {
+  height: 50px;
+  width: 85%;
+  padding: 0px 20px;
+  border: 2px solid $white;
+  border-radius: 30px;
+  outline: none;
+  font-size: $regular;
+  color: $white;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: 450ms;
+}
+.input::placeholder {
+  color: $white;
+}
+.input:hover {
+  box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.3);
+}
+.input:focus {
+  box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.3);
+}
