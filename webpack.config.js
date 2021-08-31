@@ -62,4 +62,14 @@ module.exports = {
     }),
     new DotEnv(),
   ],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "dist"),
+      publicPath: "/",
+    },
+    historyApiFallback: true,
+    compress: true,
+    port: 8081,
+    open: true,
+  },
 };

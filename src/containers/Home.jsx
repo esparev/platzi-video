@@ -11,9 +11,7 @@ const API = process.env.API;
 
 const Home = () => {
   const initialState = useInitialState(API);
-  return initialState.length === 0 ? (
-    <h1>Loading...</h1>
-  ) : (
+  return (
     <div className="App">
       <Header />
       <Search />
