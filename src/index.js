@@ -8,7 +8,8 @@ import App from "./routes/App.js";
 const initialState = {
   user: {},
   playing: {},
-  myList: [
+  myList: [],
+  trends: [
     {
       id: 1,
       slug: "tvshow-1",
@@ -121,8 +122,6 @@ const initialState = {
       description: "Vestibulum ac est lacinia nisi venenatis tristique",
       source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
     },
-  ],
-  trends: [
     {
       id: 9,
       slug: "tvshow-9",
@@ -179,6 +178,8 @@ const initialState = {
       description: "Vestibulum ac est lacinia nisi venenatis tristique",
       source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
     },
+  ],
+  originals: [
     {
       id: 13,
       slug: "tvshow-13",
@@ -235,8 +236,6 @@ const initialState = {
       description: "Vestibulum ac est lacinia nisi venenatis tristique",
       source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
     },
-  ],
-  originals: [
     {
       id: 17,
       slug: "tvshow-17",

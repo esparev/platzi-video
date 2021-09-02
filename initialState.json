@@ -1,5 +1,8 @@
 {
-  "myList": [
+  "user": {},
+  "playing": {},
+  "myList": [],
+  "trends": [
     {
       "id": 1,
       "slug": "tvshow-1",
@@ -103,9 +106,7 @@
       "cover": "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1189&q=80",
       "description": "Vestibulum ac est lacinia nisi venenatis tristique",
       "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4"
-    }
-  ],
-  "trends": [
+    },
     {
       "id": 9,
       "slug": "tvshow-9",
@@ -157,7 +158,9 @@
       "cover": "https://images.pexels.com/photos/4666754/pexels-photo-4666754.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
       "description": "Vestibulum ac est lacinia nisi venenatis tristique",
       "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4"
-    },
+    }
+  ],
+  "originals": [
     {
       "id": 13,
       "slug": "tvshow-13",
@@ -209,9 +212,7 @@
       "cover": "https://images.pexels.com/photos/1469196/pexels-photo-1469196.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
       "description": "Vestibulum ac est lacinia nisi venenatis tristique",
       "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4"
-    }
-  ],
-  "originals": [
+    },
     {
       "id": 17,
       "slug": "tvshow-17",
