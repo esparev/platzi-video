@@ -1,13 +1,11 @@
 import React from "react";
-import Header from "../components/Header.jsx";
-import Footer from "../components/Footer.jsx";
+import { Link } from "react-router-dom";
 import "../assets/styles/components/Login.scss";
 import googleIcon from "../assets/static/google-logo.png";
 import twitterIcon from "../assets/static/twitter-icon.png";
 
 const Login = () => (
-  <div>
-    <Header />
+  <>
     <section className="login">
       <div className="login__container">
         <h2 tabIndex="1">Log In to PlatziVideo</h2>
@@ -24,7 +22,7 @@ const Login = () => (
               <input type="checkbox" id="cbox1" value="checkbox" />
               Remember Me
             </label>
-            <a href="#">Forgot my password</a>
+            <Link to="/recover">Forgot my password</Link>
           </div>
         </form>
         <div className="login__container--social-media">
@@ -38,12 +36,11 @@ const Login = () => (
           </div>
         </div>
         <p className="login__container--register">
-          Don't have an account yet? <a href="./register.html">Register</a>
+          Don't have an account yet? <Link to="/register">Register</Link>
         </p>
       </div>
     </section>
-    <Footer />
-  </div>
+  </>
 );
 
 export default Login;

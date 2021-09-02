@@ -1,11 +1,9 @@
 import React from "react";
-import Header from "../components/Header.jsx"
-import Footer from "../components/Footer.jsx";
+import { Link } from "react-router-dom";
 import "../assets/styles/components/Login.scss";
 
 const Register = () => (
-  <div>
-    <Header />
+  <>
     <section className="login">
       <div className="login__container">
         <h2 tabindex="1">Register to PlatziVideo</h2>
@@ -20,12 +18,11 @@ const Register = () => (
           <button className="button">Register</button>
         </form>
         <p className="login__container--register">
-          Already have an account? <a href="./login.html">Log In</a>
+          Already have an account? <Link to="/login">Log In</Link>
         </p>
       </div>
     </section>
-    <Footer />
-  </div>
+  </>
 );
 
 export default Register;
