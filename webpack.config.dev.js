@@ -9,6 +9,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
   },
+  mode: "development",
   resolve: {
     extensions: [".js", ".jsx"],
   },
@@ -63,6 +64,10 @@ module.exports = {
     new DotEnv(),
   ],
   devServer: {
+    static: path.join(__dirname, "dist"),
+    compress: true,
     historyApiFallback: true,
+    port: 3006,
+    open: true,
   },
 };

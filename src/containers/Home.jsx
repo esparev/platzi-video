@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../components/Header.jsx";
+import MainHeader from "../components/MainHeader.jsx";
 import Search from "../components/Search.jsx";
 import Carousel from "../components/Carousel.jsx";
 import CarouselItem from "../components/CarouselItem.jsx";
@@ -13,7 +13,7 @@ const Home = () => {
   const initialState = useInitialState(API);
   return (
     <div className="App">
-      <Header />
+      <MainHeader />
       <Search />
 
       {initialState.mylist.length > 0 && (

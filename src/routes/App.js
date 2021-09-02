@@ -7,7 +7,7 @@ import NotFound from "../containers/NotFound.jsx";
 
 const App = () => (
   <BrowserRouter>
-    <Route path="/" component={Home} />
+    <Route exact path="/" component={Home} />
     <Route exact path="/login" component={Login} />
     <Route exact path="/register" component={Register} />
     <Route exact path="/404" component={NotFound} />
