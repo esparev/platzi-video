@@ -6,7 +6,7 @@ const Register = () => (
   <>
     <section className="login">
       <div className="login__container">
-        <h2 tabindex="1">Register to PlatziVideo</h2>
+        <h2 tabIndex="1">Register to PlatziVideo</h2>
         <form className="login__container--form">
           <input className="login-input" type="text" placeholder="Name" />
           <input className="login-input" type="text" placeholder="Email" />
