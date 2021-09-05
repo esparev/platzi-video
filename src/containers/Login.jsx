@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { loginRequest } from "../actions";
@@ -7,6 +7,9 @@ import googleIcon from "../assets/static/google-logo.png";
 import twitterIcon from "../assets/static/twitter-icon.png";
 
 const Login = (props) => {
+  useEffect(() => {
+    document.title = "PlatziVideo • Log In"
+  }, [])
   const [form, setValues] = useState({
     email: "",
   });
