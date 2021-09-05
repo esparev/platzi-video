@@ -11,6 +11,7 @@ const Login = (props) => {
   useEffect(() => {
     document.title = "PlatziVideo • Log In";
   }, []);
+  
   const [form, setValues] = useState({
     email: "",
   });

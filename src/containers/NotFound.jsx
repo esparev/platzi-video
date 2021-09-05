@@ -6,6 +6,7 @@ const NotFound = () => {
   useEffect(() => {
     document.title = "PlatziVideo • Not Found";
   }, []);
+  
   return (
     <section className="not-found">
       <img

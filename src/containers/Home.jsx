@@ -9,6 +9,7 @@ const Home = ({ myList, trends, originals }) => {
   useEffect(() => {
     document.title = "PlatziVideo";
   }, []);
+  
   return (
     <>
       <Search />
