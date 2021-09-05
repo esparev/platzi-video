@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import notFoundImg from "../assets/static/404-error.svg";
 import "../assets/styles/components/NotFound.scss";
 
-const NotFound = () => (
-  <>
+const NotFound = () => {
+  useEffect(() => {
+    document.title = "PlatziVideo • Not Found";
+  }, []);
+  return (
     <section className="not-found">
       <img
         className="not-found__img"
@@ -12,7 +15,7 @@ const NotFound = () => (
       />
       <h2 className="not-found__title">Page Not Found</h2>
     </section>
-  </>
-);
+  );
+};
 
 export default NotFound;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import Search from "../components/Search.jsx";
 import Carousel from "../components/Carousel.jsx";
@@ -6,6 +6,9 @@ import CarouselItem from "../components/CarouselItem.jsx";
 import "../assets/styles/App.scss";
 
 const Home = ({ myList, trends, originals }) => {
+  useEffect(() => {
+    document.title = "PlatziVideo";
+  }, []);
   return (
     <>
       <Search />
