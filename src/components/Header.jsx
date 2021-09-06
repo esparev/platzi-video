@@ -14,7 +14,7 @@ const Header = (props) => {
   const handleLogout = () => {
     props.logoutRequest({});
   };
-  
+
   return (
     <header className="header">
       {hasUser ? (
@@ -30,7 +30,7 @@ const Header = (props) => {
             <img src={userIcon} alt="User Icon" />
             <p>Profile</p>
           </div>
-          <ul>
+          <ul className="header__menu--list">
             <li>
               <Link to="/account">{user.name}</Link>
             </li>
@@ -41,9 +41,7 @@ const Header = (props) => {
             </li>
           </ul>
         </div>
-      ) : (
-        <Redirect to="/login" />
-      )}
+      ) : null}
     </header>
   );
 };

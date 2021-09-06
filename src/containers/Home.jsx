@@ -1,17 +1,23 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 import Search from "../components/Search.jsx";
 import Carousel from "../components/Carousel.jsx";
 import CarouselItem from "../components/CarouselItem.jsx";
 import "../assets/styles/App.scss";
 
-const Home = ({ myList, trends, originals }) => {
+const Home = (props) => {
+  const { user, myList, trends, originals } = props;
+
+  const hasUser = Object.keys(user).length > 0;
+
   useEffect(() => {
     document.title = "PlatziVideo";
   }, []);
-  
+
   return (
     <>
+      {hasUser ? null : <Redirect to="/login" />}
       <Search />
 
       {myList.length > 0 && (
@@ -42,6 +48,7 @@ const mapStateToProps = (state) => {
     myList: state.myList,
     trends: state.trends,
     originals: state.originals,
+    user: state.user,
   };
 };
 

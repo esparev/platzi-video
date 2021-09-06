@@ -3,7 +3,7 @@
 .header {
   display: flex;
   width: 100%;
-  margin-top: 20px;
+  margin: 20px 0;
   align-items: center;
   justify-content: space-between;
   font-size: $regular;
@@ -44,6 +44,7 @@
 .header__menu li a:hover {
   text-decoration: underline;
 }
-.header__menu:hover ul, ul:hover {
+.header__menu:hover .header__menu--list,
+.header__menu--list:hover {
   display: block;
 }

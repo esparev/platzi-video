@@ -21,8 +21,10 @@ const initialState = {
       duration: 133,
       cover:
         "https://images.pexels.com/photos/2859616/pexels-photo-2859616.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      description: "Vestibulum ac est lacinia nisi venenatis tristique",
-      source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
+      source:
+        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     },
     {
       id: 2,
@@ -35,8 +37,10 @@ const initialState = {
       duration: 125,
       cover:
         "https://images.unsplash.com/photo-1610559729383-e209d4271dbd?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTl8Mjc4NDc0NTV8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60",
-      description: "Vestibulum ac est lacinia nisi venenatis tristique",
-      source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
+      source:
+        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     },
     {
       id: 3,
@@ -49,8 +53,10 @@ const initialState = {
       duration: 115,
       cover:
         "https://images.pexels.com/photos/7662609/pexels-photo-7662609.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      description: "Vestibulum ac est lacinia nisi venenatis tristique",
-      source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
+      source:
+        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     },
     {
       id: 4,
@@ -63,8 +69,10 @@ const initialState = {
       duration: 115,
       cover:
         "https://images.pexels.com/photos/6963103/pexels-photo-6963103.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      description: "Vestibulum ac est lacinia nisi venenatis tristique",
-      source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
+      source:
+        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     },
     {
       id: 5,
@@ -77,8 +85,10 @@ const initialState = {
       duration: 100,
       cover:
         "https://images.pexels.com/photos/5952651/pexels-photo-5952651.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-      description: "Vestibulum ac est lacinia nisi venenatis tristique",
-      source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
+      source:
+        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     },
     {
       id: 6,
@@ -91,8 +101,10 @@ const initialState = {
       duration: 134,
       cover:
         "https://images.pexels.com/photos/2422257/pexels-photo-2422257.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      description: "Vestibulum ac est lacinia nisi venenatis tristique",
-      source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
+      source:
+        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     },
     {
       id: 7,
@@ -105,8 +117,10 @@ const initialState = {
       duration: 149,
       cover:
         "https://images.pexels.com/photos/8319942/pexels-photo-8319942.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      description: "Vestibulum ac est lacinia nisi venenatis tristique",
-      source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
+      source:
+        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     },
     {
       id: 8,
@@ -119,8 +133,10 @@ const initialState = {
       duration: 100,
       cover:
         "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1189&q=80",
-      description: "Vestibulum ac est lacinia nisi venenatis tristique",
-      source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
+      source:
+        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     },
     {
       id: 9,
@@ -133,8 +149,10 @@ const initialState = {
       duration: 164,
       cover:
         "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bmVvbiUyMHNpZ250fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60",
-      description: "Vestibulum ac est lacinia nisi venenatis tristique",
-      source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
+      source:
+        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     },
     {
       id: 10,
@@ -147,8 +165,10 @@ const initialState = {
       duration: 137,
       cover:
         "https://images.pexels.com/photos/3094799/pexels-photo-3094799.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      description: "Vestibulum ac est lacinia nisi venenatis tristique",
-      source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
+      source:
+        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     },
     {
       id: 11,
@@ -161,8 +181,10 @@ const initialState = {
       duration: 163,
       cover:
         "https://images.unsplash.com/photo-1601577660951-9c33bf5ad9fe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=486&q=80",
-      description: "Vestibulum ac est lacinia nisi venenatis tristique",
-      source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
+      source:
+        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     },
     {
       id: 12,
@@ -175,8 +197,10 @@ const initialState = {
       duration: 194,
       cover:
         "https://images.pexels.com/photos/4666754/pexels-photo-4666754.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-      description: "Vestibulum ac est lacinia nisi venenatis tristique",
-      source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
+      source:
+        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     },
   ],
   originals: [
@@ -191,8 +215,10 @@ const initialState = {
       duration: 124,
       cover:
         "https://images.pexels.com/photos/3800795/pexels-photo-3800795.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-      description: "Vestibulum ac est lacinia nisi venenatis tristique",
-      source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
+      source:
+        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     },
     {
       id: 14,
@@ -205,8 +231,10 @@ const initialState = {
       duration: 179,
       cover:
         "https://images.unsplash.com/photo-1613190419621-85c6e1763d08?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80",
-      description: "Vestibulum ac est lacinia nisi venenatis tristique",
-      source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
+      source:
+        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     },
     {
       id: 15,
@@ -219,8 +247,10 @@ const initialState = {
       duration: 115,
       cover:
         "https://images.pexels.com/photos/7662609/pexels-photo-7662609.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      description: "Vestibulum ac est lacinia nisi venenatis tristique",
-      source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
+      source:
+        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     },
     {
       id: 16,
@@ -233,8 +263,10 @@ const initialState = {
       duration: 179,
       cover:
         "https://images.pexels.com/photos/1469196/pexels-photo-1469196.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      description: "Vestibulum ac est lacinia nisi venenatis tristique",
-      source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
+      source:
+        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     },
     {
       id: 17,
@@ -247,8 +279,10 @@ const initialState = {
       duration: 148,
       cover:
         "https://images.unsplash.com/photo-1557040135-9dc2a6b60411?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGFsaWVuJTIwdHJhdmVsfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60",
-      description: "Vestibulum ac est lacinia nisi venenatis tristique",
-      source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
+      source:
+        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     },
     {
       id: 18,
@@ -261,8 +295,10 @@ const initialState = {
       duration: 128,
       cover:
         "https://images.pexels.com/photos/7459424/pexels-photo-7459424.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-      description: "Vestibulum ac est lacinia nisi venenatis tristique",
-      source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
+      source:
+        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     },
     {
       id: 19,
@@ -275,8 +311,10 @@ const initialState = {
       duration: 346,
       cover:
         "https://images.unsplash.com/photo-1629067654058-dc69da3515b8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
-      description: "Vestibulum ac est lacinia nisi venenatis tristique",
-      source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
+      source:
+        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     },
     {
       id: 20,
@@ -289,8 +327,10 @@ const initialState = {
       duration: 226,
       cover:
         "https://images.pexels.com/photos/2043837/pexels-photo-2043837.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-      description: "Vestibulum ac est lacinia nisi venenatis tristique",
-      source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
+      source:
+        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     },
     {
       id: 21,
@@ -303,8 +343,10 @@ const initialState = {
       duration: 190,
       cover:
         "https://images.unsplash.com/photo-1516307318288-46d4194fe79e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
-      description: "Vestibulum ac est lacinia nisi venenatis tristique",
-      source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
+      source:
+        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     },
     {
       id: 22,
@@ -317,8 +359,10 @@ const initialState = {
       duration: 160,
       cover:
         "https://images.unsplash.com/photo-1530919424169-4b95f917e937?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE3fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=600&q=60",
-      description: "Vestibulum ac est lacinia nisi venenatis tristique",
-      source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
+      source:
+        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     },
     {
       id: 23,
@@ -331,8 +375,10 @@ const initialState = {
       duration: 160,
       cover:
         "https://images.pexels.com/photos/8090151/pexels-photo-8090151.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-      description: "Vestibulum ac est lacinia nisi venenatis tristique",
-      source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
+      source:
+        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     },
     {
       id: 24,
@@ -345,8 +391,10 @@ const initialState = {
       duration: 160,
       cover:
         "https://images.pexels.com/photos/8090293/pexels-photo-8090293.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-      description: "Vestibulum ac est lacinia nisi venenatis tristique",
-      source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
+      source:
+        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     },
   ],
 };
