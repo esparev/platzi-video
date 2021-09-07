@@ -7,8 +7,7 @@ import CarouselItem from "../components/CarouselItem.jsx";
 import "../assets/styles/App.scss";
 
 const Home = (props) => {
-  const { user, myList, trends, originals } = props;
-
+  const { user, myList, trends, originals, searchResult } = props;
   const hasUser = Object.keys(user).length > 0;
 
   useEffect(() => {
@@ -19,6 +18,14 @@ const Home = (props) => {
     <>
       {hasUser ? null : <Redirect to="/login" />}
       <Search />
+
+      {searchResult.length > 0 && (
+        <Carousel title="Search Result">
+          {searchResult.map((item) => (
+            <CarouselItem key={item.id} {...item} />
+          ))}
+        </Carousel>
+      )}
 
       {myList.length > 0 && (
         <Carousel title="My List">
@@ -49,6 +56,7 @@ const mapStateToProps = (state) => {
     trends: state.trends,
     originals: state.originals,
     user: state.user,
+    searchResult: state.searchResult,
   };
 };
 

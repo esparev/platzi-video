@@ -33,6 +33,15 @@ const reducer = (state, action) => {
           state.originals.find((item) => item.id === Number(action.payload)) ||
           [],
       };
+    case "GET_SEARCH_RESULT":
+      if (action.payload === "") return { ...state, searchResult: [] };
+      const lists = [...state.trends, ...state.originals];
+      return {
+        ...state,
+        searchResult: lists.filter((item) =>
+          item.title.toLowerCase().includes(action.payload.toLowerCase())
+        ),
+      };
     default:
       return state;
   }

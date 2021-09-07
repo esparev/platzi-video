@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router";
+import PropTypes from "prop-types";
 import { getVideoSource } from "../actions";
 import "../assets/styles/components/Player.scss";
 
@@ -44,6 +45,16 @@ const Player = (props) => {
   ) : (
     setTimeout(<Redirect to="/404" />, 3000)
   );
+};
+
+Player.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  duration: PropTypes.number,
+  language: PropTypes.string,
+  type: PropTypes.string,
+  contentRating: PropTypes.string,
+  year: PropTypes.number,
 };
 
 const mapStateToProps = (state) => {

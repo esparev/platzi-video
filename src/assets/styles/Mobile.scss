@@ -1,19 +1,27 @@
 @media only screen and (max-width: 500px) {
   // HEADER
-  .header__img {
-    height: 60px;
+  .App .header {
+    margin: 20px 0 50px
+  }
+  .header .header__img {
+    height: 65px;
   }
   .header__menu--profile {
     margin: 0;
   }
-  .header__menu--profile img {
+  .header__menu .header__menu--profile img {
     margin: 0;
   }
   .header__menu--profile p {
     display: none;
   }
+  .header .header__menu ul {
+    width: auto;
+    margin-left: 10px;
+    text-align: center;
+  }
   // LOGIN
-  .login__container {
+  .login .login__container {
     width: 100%;
     padding: 0;
     border: none;
@@ -23,22 +31,24 @@
   .login__container--social-media {
     margin: 20px 0;
   }
-  // 404 NOT FOUND 
+  // 404 NOT FOUND
   .not-found__img {
     height: auto;
     width: 90%;
   }
   // PLAYER
-  video {
+  .player video {
     width: 100%;
   }
-  .player__about {
+  .player__info .player__about {
     display: inline-block;
   }
   // FOOTER
   .footer {
     flex-direction: column;
-    align-items: center;
     justify-content: space-evenly;
+  }
+  .footer .footer--link {
+    padding: 0;
   }
 }

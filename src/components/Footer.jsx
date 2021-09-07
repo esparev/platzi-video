@@ -4,9 +4,9 @@ import "../assets/styles/components/Footer.scss";
 
 const Footer = () => (
   <footer className="footer">
-    <Link to="/terms">Terms of use</Link>
-    <Link to="/privacy">Privacy Statement</Link>
-    <Link to="/help">Help Center</Link>
+    <Link className="footer--link" to="/terms">Terms of use</Link>
+    <Link className="footer--link" to="/privacy">Privacy Statement</Link>
+    <Link className="footer--link" to="/help">Help Center</Link>
   </footer>
 );
 

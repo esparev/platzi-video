@@ -8,7 +8,6 @@ import userIcon from "../assets/static/user-icon.png";
 
 const Header = (props) => {
   const { user } = props;
-
   const hasUser = Object.keys(user).length > 0;
 
   const handleLogout = () => {
@@ -32,7 +31,7 @@ const Header = (props) => {
           </div>
           <ul className="header__menu--list">
             <li>
-              <Link to="/account">{user.name}</Link>
+              <Link to="/account">Account{user.name}</Link>
             </li>
             <li>
               <Link to="/login" onClick={handleLogout}>

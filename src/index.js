@@ -8,6 +8,7 @@ import App from "./routes/App.js";
 const initialState = {
   user: {},
   playing: {},
+  searchResult: [],
   myList: [],
   trends: [
     {
