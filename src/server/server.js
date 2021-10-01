@@ -1,6 +1,16 @@
 import express from "express";
 import dotenv from "dotenv";
 import webpack from "webpack";
+import React from "react";
+import { renderToString } from "react-dom/server";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import { renderRoutes } from "react-router-config";
+import { StaticRouter } from "react-router-dom";
+import serverRoutes from "../frontend/routes/ServerRoutes.js";
+import reducer from "../frontend/reducers";
+import initialState from "../frontend/initialState.js";
+
 // Environment configuration file
 dotenv.config();
 // Obtaining environment variables
@@ -26,8 +36,13 @@ if (ENV === "development") {
   app.use(webpackHotMiddleware(compiler));
 }
 
-app.get("*", (req, res) => {
-  res.send(`
+/**
+ * Stores the initial HTML for the app to render
+ * on the server side
+ * @returns initial HTML as a string
+ */
+const setResponse = (html) => {
+  return `
   <!DOCTYPE html>
   <html lang="en">
     <head>
@@ -42,12 +57,34 @@ app.get("*", (req, res) => {
       <title>PlatziVideo</title>
     </head>
     <body>
-      <div id="app"></div>
+      <div id="app">${html}</div>
       <script src="assets/app.js" type="text/javascript"></script>
     </body>
-  </html>
-  `);
-});
+  </html>`;
+};
+
+/**
+ * Renders the app from the server side
+ * @param {*} req - request
+ * @param {*} res - response
+ * @returns configured HTML for rendering
+ */
+const renderApp = (req, res) => {
+  const store = createStore(reducer, initialState);
+  // Store React elements to its initial HTML as a String for rendering
+  // renderRoutes receives the array from serverRoutes
+  const html = renderToString(
+    <Provider store={store}>
+      <StaticRouter location={req.url} context={{}}>
+        {renderRoutes(serverRoutes)}
+      </StaticRouter>
+    </Provider>
+  );
+
+  res.send(setResponse(html));
+};
+
+app.get("*", renderApp);
 
 app.listen(PORT, (err) => {
   if (err) {
