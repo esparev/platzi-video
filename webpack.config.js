@@ -1,14 +1,19 @@
 const path = require("path");
 const webpack = require("webpack");
-const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: ["./src/frontend/index.js", "webpack-hot-middleware/client?path=/__webpack_hmr&timeout=2000&reload=true"],
+  entry: [
+    "./src/frontend/index.js",
+    "webpack-hot-middleware/client?path=/__webpack_hmr&timeout=2000&reload=true",
+  ],
   mode: "production",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
+    filename: "assets/app.js",
+    assetModuleFilename: "assets/static/[hash][ext][query]",
     publicPath: "/",
   },
   resolve: {
@@ -47,7 +52,7 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-              name: "assets/[hash].[ext]",
+              name: "assets/static/[hash].[ext]",
             },
           },
         ],
@@ -56,13 +61,18 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new HtmlWebPackPlugin({
-      template: "./public/index.html",
-      filename: "./index.html",
-    }),
     new MiniCssExtractPlugin({
-      filename: "assets/[name].css",
+      filename: "assets/app.css",
     }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "src", "frontend/assets/static"),
+          to: "assets/static",
+        },
+      ],
+    }),
+    new CleanWebpackPlugin(),
   ],
   devServer: {
     historyApiFallback: true,

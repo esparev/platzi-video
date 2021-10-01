@@ -27,7 +27,26 @@ if (ENV === "development") {
 }
 
 app.get("*", (req, res) => {
-  res.send({ hello: "express" });
+  res.send(`
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="PlatziVideo" />
+      <meta property="og:description" content="A place to watch online videos from Platzi!" />
+      <link rel="icon" type="image/x-icon" href="assets/static/platzi-video-icon.ico" />
+      <link rel="stylesheet" href="assets/app.css" type="text/css" />
+      <title>PlatziVideo</title>
+    </head>
+    <body>
+      <div id="app"></div>
+      <script src="assets/app.js" type="text/javascript"></script>
+    </body>
+  </html>
+  `);
 });
 
 app.listen(PORT, (err) => {
