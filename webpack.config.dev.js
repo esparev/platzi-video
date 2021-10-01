@@ -51,7 +51,7 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-              name: "assets/static/[hash].[ext]",
+              name: "assets/static/[md5:hash].[ext]",
             },
           },
         ],

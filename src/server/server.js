@@ -9,6 +9,7 @@ import { renderRoutes } from "react-router-config";
 import { StaticRouter } from "react-router-dom";
 import serverRoutes from "../frontend/routes/ServerRoutes.js";
 import reducer from "../frontend/reducers";
+import Layout from "../frontend/components/Layout.jsx";
 import initialState from "../frontend/initialState.js";
 
 // Environment configuration file
@@ -76,7 +77,7 @@ const renderApp = (req, res) => {
   const html = renderToString(
     <Provider store={store}>
       <StaticRouter location={req.url} context={{}}>
-        {renderRoutes(serverRoutes)}
+        <Layout>{renderRoutes(serverRoutes)}</Layout>
       </StaticRouter>
     </Provider>
   );
