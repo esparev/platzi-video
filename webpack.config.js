@@ -92,6 +92,33 @@ module.exports = {
   optimization: {
     minimize: true,
     minimizer: [new TerserPlugin()],
+    // Vendor files
+    splitChunks: {
+      chunks: "async", // Asynchronous chunks
+      // Cache group to make vendor files
+      cacheGroups: {
+        vendors: {
+          name: "vendors",
+          chunks: "all", // Take all chunks
+          reuseExistingChunk: true,
+          priority: 1, // Max priority to all chunks
+          filename: isDev ? "assets/vendor.js" : "assets/vendor-[hash].js",
+          enforce: true, // Will do always
+          /**
+           * Tests chunks
+           * @param {*} module
+           * @param {*} chunks
+           * @returns chunk that's not called 'vendors' and its contained in node_modules
+           */
+          test(module, chunks) {
+            // Obtain chunk name
+            const name = module.nameForCondition && module.nameForCondition();
+            return (chunk) =>
+              chunk.name !== "vendors" && /[\\/]__node_modules[\\/]/.test(name);
+          },
+        },
+      },
+    },
   },
   devServer: {
     historyApiFallback: true,
