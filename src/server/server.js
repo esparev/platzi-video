@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import webpack from "webpack";
+import helmet from "helmet";
 import React from "react";
 import { renderToString } from "react-dom/server";
 import { Provider } from "react-redux";
@@ -35,6 +36,21 @@ if (ENV === "development") {
   app.use(webpackDevMiddleware(compiler, serverConfig));
   // Middleware to enable hot reload
   app.use(webpackHotMiddleware(compiler));
+} else {
+  // Public folder config to load from webpack's bundle
+  app.use(express.static(`${__dirname}/public`));
+  // Middleware to secure the express app by setting various HTTP headers
+  app.use(helmet());
+  /* 
+  permittedCrossDomainPolicies blocks cross-domain content 
+  to decrease band-with from mostly adobe products
+  */
+  app.use(helmet.permittedCrossDomainPolicies());
+  /*
+  Disables the header that shows information about the server
+  our app is connected to
+  */
+  app.disable("x-powered-by");
 }
 
 /**
