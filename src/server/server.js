@@ -42,7 +42,7 @@ if (ENV === "development") {
  * on the server side
  * @returns initial HTML as a string
  */
-const setResponse = (html) => {
+const setResponse = (html, preloadedState) => {
   return `
   <!DOCTYPE html>
   <html lang="en">
@@ -59,6 +59,12 @@ const setResponse = (html) => {
     </head>
     <body>
       <div id="app">${html}</div>
+      <script>
+        window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(
+          /</g,
+          "\\u003c"
+        )}
+      </script>
       <script src="assets/app.js" type="text/javascript"></script>
     </body>
   </html>`;
@@ -72,6 +78,8 @@ const setResponse = (html) => {
  */
 const renderApp = (req, res) => {
   const store = createStore(reducer, initialState);
+  // Preload the initial state defined in store
+  const preloadedState = store.getState();
   // Store React elements to its initial HTML as a String for rendering
   // renderRoutes receives the array from serverRoutes
   const html = renderToString(
@@ -82,7 +90,7 @@ const renderApp = (req, res) => {
     </Provider>
   );
 
-  res.send(setResponse(html));
+  res.send(setResponse(html, preloadedState));
 };
 
 app.get("*", renderApp);
