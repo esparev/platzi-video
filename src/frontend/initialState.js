@@ -18,7 +18,7 @@ const initialState = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
       source:
-        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
     },
     {
       id: 2,
@@ -34,7 +34,7 @@ const initialState = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
       source:
-        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
     },
     {
       id: 3,
@@ -50,7 +50,7 @@ const initialState = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
       source:
-        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
     },
     {
       id: 4,
@@ -66,7 +66,7 @@ const initialState = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
       source:
-        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
     },
     {
       id: 5,
@@ -82,7 +82,7 @@ const initialState = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
       source:
-        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
     },
     {
       id: 6,
@@ -98,7 +98,7 @@ const initialState = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
       source:
-        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
     },
     {
       id: 7,
@@ -114,7 +114,7 @@ const initialState = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
       source:
-        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
     },
     {
       id: 8,
@@ -130,7 +130,7 @@ const initialState = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
       source:
-        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
     },
     {
       id: 9,
@@ -146,7 +146,7 @@ const initialState = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
       source:
-        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
     },
     {
       id: 10,
@@ -162,7 +162,7 @@ const initialState = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
       source:
-        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
     },
     {
       id: 11,
@@ -178,7 +178,7 @@ const initialState = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
       source:
-        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
     },
     {
       id: 12,
@@ -194,7 +194,7 @@ const initialState = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
       source:
-        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
     },
   ],
   originals: [
@@ -212,7 +212,7 @@ const initialState = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
       source:
-        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
     },
     {
       id: 14,
@@ -228,7 +228,7 @@ const initialState = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
       source:
-        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
     },
     {
       id: 15,
@@ -244,7 +244,7 @@ const initialState = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
       source:
-        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
     },
     {
       id: 16,
@@ -260,7 +260,7 @@ const initialState = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
       source:
-        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
     },
     {
       id: 17,
@@ -276,7 +276,7 @@ const initialState = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
       source:
-        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
     },
     {
       id: 18,
@@ -292,7 +292,7 @@ const initialState = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
       source:
-        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
     },
     {
       id: 19,
@@ -308,7 +308,7 @@ const initialState = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
       source:
-        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
     },
     {
       id: 20,
@@ -324,7 +324,7 @@ const initialState = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
       source:
-        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
     },
     {
       id: 21,
@@ -340,7 +340,7 @@ const initialState = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
       source:
-        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
     },
     {
       id: 22,
@@ -356,7 +356,7 @@ const initialState = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
       source:
-        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
     },
     {
       id: 23,
@@ -372,7 +372,7 @@ const initialState = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
       source:
-        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
     },
     {
       id: 24,
@@ -388,7 +388,7 @@ const initialState = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed porttitor sollicitudin nullam sit diam. Elit et nunc ac augue. Potenti at aliquam lectus magna vestibulum hendrerit. Posuere integer quam enim at massa enim auctor.",
       source:
-        "https://commondatastoragegoogleapis.con/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
     },
   ],
 };

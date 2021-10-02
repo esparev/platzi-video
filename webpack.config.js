@@ -4,14 +4,23 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
+require("dotenv").config();
+
+const isDev = process.env.ENV === "development";
+const entry = ["./src/frontend/index.js"];
+
+if (isDev) {
+  entry.push(
+    "webpack-hot-middleware/client?path=/__webpack_hmr&timeout=2000&reload=true"
+  );
+}
+
 module.exports = {
-  entry: [
-    "./src/frontend/index.js",
-    "webpack-hot-middleware/client?path=/__webpack_hmr&timeout=2000&reload=true",
-  ],
-  mode: "production",
+  // Applying shorthand for entry
+  entry,
+  mode: process.env.ENV,
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "src/server/public"),
     filename: "assets/app.js",
     assetModuleFilename: "assets/static/[hash][ext][query]",
     publicPath: "/",
@@ -60,7 +69,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    isDev ? new webpack.HotModuleReplacementPlugin() : () => {},
     new MiniCssExtractPlugin({
       filename: "assets/app.css",
     }),

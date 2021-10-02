@@ -4,10 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode production",
-    "dev": "webpack --config webpack.config.dev.js",
-    "start": "webpack serve --config webpack.config.dev.js",
-    "start:dev": "nodemon -L src/server/index.js"
+    "build": "webpack-cli --config webpack.config.js",
+    "start": "nodemon -L src/server/index.js"
   },
   "repository": {
     "type": "git",
