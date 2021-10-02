@@ -5,6 +5,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CompressionWebpackPlugin = require("compression-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const { WebpackManifestPlugin } = require("webpack-manifest-plugin");
 
 require("dotenv").config();
 
@@ -23,7 +24,7 @@ module.exports = {
   mode: process.env.ENV,
   output: {
     path: path.resolve(__dirname, "src/server/public"),
-    filename: "assets/app.js",
+    filename: isDev ? "assets/app.js" : "assets/app-[hash].js",
     assetModuleFilename: "assets/static/[hash][ext][query]",
     publicPath: "/",
   },
@@ -70,13 +71,18 @@ module.exports = {
           test: /\.js$|\.css$/,
           filename: "[path][base].gz",
         }),
+    isDev ? () => {} : new WebpackManifestPlugin(),
     new MiniCssExtractPlugin({
-      filename: "assets/app.css",
+      filename: isDev ? "assets/app.css" : "assets/app-[hash].css",
     }),
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, "src", "frontend/assets/static"),
+          from: path.resolve(
+            __dirname,
+            "src",
+            "frontend/assets/static/platzi-video-icon.ico"
+          ),
           to: "assets/static",
         },
       ],

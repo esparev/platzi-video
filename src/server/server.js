@@ -12,6 +12,7 @@ import serverRoutes from "../frontend/routes/ServerRoutes.js";
 import reducer from "../frontend/reducers";
 import Layout from "../frontend/components/Layout.jsx";
 import initialState from "../frontend/initialState.js";
+import getManifest from "./getManifest.js";
 
 // Environment configuration file
 dotenv.config();
@@ -37,6 +38,12 @@ if (ENV === "development") {
   // Middleware to enable hot reload
   app.use(webpackHotMiddleware(compiler));
 } else {
+  app.use((req, res, next) => {
+    if (!req.hashManifest) {
+      req.hashManifest = getManifest();
+    }
+    next();
+  });
   // Public folder config to load from webpack's bundle
   app.use(express.static(`${__dirname}/public`));
   // Middleware to secure the express app by setting various HTTP headers
@@ -58,7 +65,10 @@ if (ENV === "development") {
  * on the server side
  * @returns initial HTML as a string
  */
-const setResponse = (html, preloadedState) => {
+const setResponse = (html, preloadedState, manifest) => {
+  const mainStyles = manifest ? manifest["main.css"] : "assets/app.css";
+  const mainBuild = manifest ? manifest["main.js"] : "assets/app.js";
+
   return `
   <!DOCTYPE html>
   <html lang="en">
@@ -70,7 +80,7 @@ const setResponse = (html, preloadedState) => {
       <meta property="og:title" content="PlatziVideo" />
       <meta property="og:description" content="A place to watch online videos from Platzi!" />
       <link rel="icon" type="image/x-icon" href="assets/static/platzi-video-icon.ico" />
-      <link rel="stylesheet" href="assets/app.css" type="text/css" />
+      <link rel="stylesheet" href=${mainStyles} type="text/css" />
       <title>PlatziVideo</title>
     </head>
     <body>
@@ -81,7 +91,7 @@ const setResponse = (html, preloadedState) => {
           "\\u003c"
         )}
       </script>
-      <script src="assets/app.js" type="text/javascript"></script>
+      <script src=${mainBuild} type="text/javascript"></script>
     </body>
   </html>`;
 };
@@ -106,7 +116,12 @@ const renderApp = (req, res) => {
     </Provider>
   );
 
-  res.send(setResponse(html, preloadedState));
+  res.set(
+    "Content-Security-Policy",
+    "default-src 'self'; img-src 'self' *; media-src *; script-src 'self' 'sha256-KlbEnYxSWkHOFqQh7kFtymSpvMiOLtHEL5Zq91zyyjA='; style-src-elem 'self' https://fonts.googleapis.com; font-src *"
+  );
+
+  res.send(setResponse(html, preloadedState, req.hashManifest));
 };
 
 app.get("*", renderApp);
