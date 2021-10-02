@@ -126,6 +126,7 @@ const renderApp = (req, res) => {
   res.send(setResponse(html, preloadedState, req.hashManifest));
 };
 
+// Ensure that the server responds to all the routes
 app.get("*", renderApp);
 
 app.listen(PORT, (err) => {

@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { logoutRequest } from "../actions";
 import "../assets/styles/components/Header.scss";
 import logo from "../assets/static/logo-platzi-video.png";
@@ -31,7 +31,10 @@ const Header = (props) => {
           </div>
           <ul className="header__menu--list">
             <li>
-              <Link to="/account">Account{user.name}</Link>
+              <Link to="/account">
+                Account
+                {user.name}
+              </Link>
             </li>
             <li>
               <Link to="/login" onClick={handleLogout}>

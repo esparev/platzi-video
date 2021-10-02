@@ -6,38 +6,53 @@ import { getVideoSource } from "../actions";
 import "../assets/styles/components/Player.scss";
 
 const Player = (props) => {
-  const { id } = props.match.params;
-  const hasPlaying = Object.keys(props.playing).length > 0;
+  const { match, playing } = props;
+  const { id } = match.params;
+  const hasPlaying = Object.keys(playing).length > 0;
 
   useEffect(() => {
-    document.title = `PlatziVideo • ${props.playing.title}`;
+    document.title = `PlatziVideo • ${playing.title}`;
     props.getVideoSource(id);
-  }, [props.playing.title]);
+  }, [playing.title]);
 
   return hasPlaying ? (
     <div className="player">
       <video controls autoPlay>
-        <source src={props.playing.source} type="video/mp4" />
+        <source src={playing.source} type="video/mp4" />
       </video>
       <div className="player__info">
-        <h1 className="player__title--main">{props.playing.title}</h1>
-        <p className="player__info--description">{props.playing.description}</p>
+        <h1 className="player__title--main">{playing.title}</h1>
+        <p className="player__info--description">{playing.description}</p>
         <h2 className="player__about--title">About</h2>
         <ul className="player__about">
           <li className="player__about--info">
-            Duration: <strong>{props.playing.duration} minutes</strong>
+            Duration:
+            {" "}
+            <strong>
+              {playing.duration}
+              {" "}
+              minutes
+            </strong>
           </li>
           <li className="player__about--info">
-            Language: <strong>{props.playing.language}</strong>
+            Language:
+            {" "}
+            <strong>{playing.language}</strong>
           </li>
           <li className="player__about--info">
-            Genre: <strong>{props.playing.type}</strong>
+            Genre:
+            {" "}
+            <strong>{playing.type}</strong>
           </li>
           <li className="player__about--info">
-            Rating: <strong>{props.playing.contentRating}</strong>
+            Rating:
+            {" "}
+            <strong>{playing.contentRating}</strong>
           </li>
           <li className="player__about--info">
-            Year: <strong>{props.playing.year}</strong>
+            Year:
+            {" "}
+            <strong>{playing.year}</strong>
           </li>
         </ul>
       </div>

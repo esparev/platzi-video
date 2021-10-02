@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
-import Search from "../components/Search.jsx";
-import Carousel from "../components/Carousel.jsx";
-import CarouselItem from "../components/CarouselItem.jsx";
+import Search from "../components/Search";
+import Carousel from "../components/Carousel";
+import CarouselItem from "../components/CarouselItem";
 import "../assets/styles/App.scss";
 
 const Home = (props) => {
@@ -22,7 +22,7 @@ const Home = (props) => {
       {searchResult.length > 0 && (
         <Carousel title="Search Result">
           {searchResult.map((item) => (
-            <CarouselItem key={item.id} {...item} />
+            <CarouselItem key={item.id} />
           ))}
         </Carousel>
       )}
@@ -30,20 +30,20 @@ const Home = (props) => {
       {myList.length > 0 && (
         <Carousel title="My List">
           {myList.map((item) => (
-            <CarouselItem key={item.id} {...item} isList />
+            <CarouselItem key={item.id} isList />
           ))}
         </Carousel>
       )}
 
       <Carousel title="Recommended For You">
         {trends.map((item) => (
-          <CarouselItem key={item.id} {...item} />
+          <CarouselItem key={item.id} />
         ))}
       </Carousel>
 
       <Carousel title="PlatziVideo Originals">
         {originals.map((item) => (
-          <CarouselItem key={item.id} {...item} />
+          <CarouselItem key={item.id} />
         ))}
       </Carousel>
     </>

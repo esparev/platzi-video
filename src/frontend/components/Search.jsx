@@ -1,6 +1,6 @@
 import React from "react";
-import { getSearchResult } from "../actions";
 import { connect } from "react-redux";
+import { getSearchResult } from "../actions";
 import "../assets/styles/components/Search.scss";
 
 const Search = (props) => {

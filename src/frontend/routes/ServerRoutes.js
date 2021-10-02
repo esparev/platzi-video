@@ -1,8 +1,8 @@
-import Home from "../containers/Home.jsx";
-import Login from "../containers/Login.jsx";
-import Register from "../containers/Register.jsx";
-import NotFound from "../containers/NotFound.jsx";
-import Player from "../containers/Player.jsx";
+import Home from "../containers/Home";
+import Login from "../containers/Login";
+import Register from "../containers/Register";
+import NotFound from "../containers/NotFound";
+import Player from "../containers/Player";
 
 const routes = [
   {

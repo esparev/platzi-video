@@ -31,7 +31,7 @@ const Register = (props) => {
   return (
     <section className="login">
       <div className="login__container">
-        <h2 tabIndex="1">Register to PlatziVideo</h2>
+        <h2>Register to PlatziVideo</h2>
         <form className="login__container--form" onSubmit={handleSubmit}>
           <input
             name="name"
@@ -54,10 +54,14 @@ const Register = (props) => {
             placeholder="Password"
             onChange={handleInput}
           />
-          <button className="button">Register</button>
+          <button className="button" type="button">
+            Register
+          </button>
         </form>
         <p className="login__container--register">
-          Already have an account? <Link to="/login">Log In</Link>
+          Already have an account?
+          {" "}
+          <Link to="/login">Log In</Link>
         </p>
       </div>
     </section>

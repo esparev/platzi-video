@@ -1,3 +1,5 @@
+const lists = [...state.trends, ...state.originals];
+
 const reducer = (state, action) => {
   switch (action.type) {
     case "SET_FAVORITE":
@@ -35,12 +37,9 @@ const reducer = (state, action) => {
       };
     case "GET_SEARCH_RESULT":
       if (action.payload === "") return { ...state, searchResult: [] };
-      const lists = [...state.trends, ...state.originals];
       return {
         ...state,
-        searchResult: lists.filter((item) =>
-          item.title.toLowerCase().includes(action.payload.toLowerCase())
-        ),
+        searchResult: lists.filter((item) => item.title.toLowerCase().includes(action.payload.toLowerCase())),
       };
     default:
       return state;

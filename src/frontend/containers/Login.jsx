@@ -11,7 +11,7 @@ const Login = (props) => {
   useEffect(() => {
     document.title = "PlatziVideo • Log In";
   }, []);
-  
+
   const [form, setValues] = useState({
     email: "",
   });
@@ -32,7 +32,7 @@ const Login = (props) => {
   return (
     <section className="login">
       <div className="login__container">
-        <h2 tabIndex="1">Log In to PlatziVideo</h2>
+        <h2>Log In to PlatziVideo</h2>
         <form className="login__container--form" onSubmit={handleSubmit}>
           <input
             name="email"
@@ -48,9 +48,11 @@ const Login = (props) => {
             placeholder="Password"
             onChange={handleInput}
           />
-          <button className="button">Log In</button>
+          <button className="button" type="button">
+            Log In
+          </button>
           <div className="login__container--remember-me">
-            <label>
+            <label htmlFor="cbox1">
               <input type="checkbox" id="cbox1" value="checkbox" />
               Remember Me
             </label>
@@ -72,7 +74,9 @@ const Login = (props) => {
           </div>
         </div>
         <p className="login__container--register">
-          Don't have an account yet? <Link to="/register">Register</Link>
+          Don't have an account yet?
+          {" "}
+          <Link to="/register">Register</Link>
         </p>
       </div>
     </section>

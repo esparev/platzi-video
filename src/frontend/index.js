@@ -5,7 +5,7 @@ import { createStore, compose } from "redux";
 import { Router } from "react-router";
 import { createBrowserHistory } from "history";
 import reducer from "./reducers";
-import App from "./routes/App.js";
+import App from "./routes/App";
 
 const history = createBrowserHistory();
 // Bring the initial State from SSR to CSR
@@ -21,5 +21,5 @@ ReactDOM.hydrate(
       <App />
     </Router>
   </Provider>,
-  document.getElementById("app")
+  document.getElementById("app"),
 );
