@@ -24,8 +24,8 @@ module.exports = {
   mode: process.env.ENV,
   output: {
     path: path.resolve(__dirname, "src/server/public"),
-    filename: isDev ? "assets/app.js" : "assets/app-[hash].js",
-    assetModuleFilename: "assets/static/[hash][ext][query]",
+    filename: isDev ? "assets/app.js" : "assets/app-[fullhash].js",
+    assetModuleFilename: "assets/static/[fullhash][ext][query]",
     publicPath: "/",
   },
   resolve: {
@@ -73,7 +73,7 @@ module.exports = {
         }),
     isDev ? () => {} : new WebpackManifestPlugin(),
     new MiniCssExtractPlugin({
-      filename: isDev ? "assets/app.css" : "assets/app-[hash].css",
+      filename: isDev ? "assets/app.css" : "assets/app-[fullhash].css",
     }),
     new CopyPlugin({
       patterns: [
@@ -102,7 +102,7 @@ module.exports = {
           chunks: "all", // Take all chunks
           reuseExistingChunk: true,
           priority: 1, // Max priority to all chunks
-          filename: isDev ? "assets/vendor.js" : "assets/vendor-[hash].js",
+          filename: isDev ? "assets/vendor.js" : "assets/vendor-[fullhash].js",
           enforce: true, // Will do always
           /**
            * Tests chunks
