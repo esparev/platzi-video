@@ -22,7 +22,7 @@ const Home = (props) => {
       {searchResult.length > 0 && (
         <Carousel title="Search Result">
           {searchResult.map((item) => (
-            <CarouselItem key={item.id} />
+            <CarouselItem key={item.id} {...item} />
           ))}
         </Carousel>
       )}
@@ -30,20 +30,20 @@ const Home = (props) => {
       {myList.length > 0 && (
         <Carousel title="My List">
           {myList.map((item) => (
-            <CarouselItem key={item.id} isList />
+            <CarouselItem key={item.id} {...item} isList />
           ))}
         </Carousel>
       )}
 
       <Carousel title="Recommended For You">
         {trends.map((item) => (
-          <CarouselItem key={item.id} />
+          <CarouselItem key={item.id} {...item} />
         ))}
       </Carousel>
 
       <Carousel title="PlatziVideo Originals">
         {originals.map((item) => (
-          <CarouselItem key={item.id} />
+          <CarouselItem key={item.id} {...item} />
         ))}
       </Carousel>
     </>

@@ -48,7 +48,7 @@ const Login = (props) => {
             placeholder="Password"
             onChange={handleInput}
           />
-          <button className="button" type="button">
+          <button className="button" type="submit">
             Log In
           </button>
           <div className="login__container--remember-me">
@@ -74,7 +74,7 @@ const Login = (props) => {
           </div>
         </div>
         <p className="login__container--register">
-          Don't have an account yet?
+          Don&apos;t have an account yet?
           {" "}
           <Link to="/register">Register</Link>
         </p>

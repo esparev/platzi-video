@@ -54,7 +54,7 @@ const Register = (props) => {
             placeholder="Password"
             onChange={handleInput}
           />
-          <button className="button" type="button">
+          <button className="button" type="submit">
             Register
           </button>
         </form>

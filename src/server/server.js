@@ -120,7 +120,7 @@ const renderApp = (req, res) => {
 
   res.set(
     "Content-Security-Policy",
-    "default-src 'self'; img-src 'self' *; media-src *; script-src 'self' 'sha256-KlbEnYxSWkHOFqQh7kFtymSpvMiOLtHEL5Zq91zyyjA='; style-src-elem 'self' https://fonts.googleapis.com; font-src *"
+    "default-src 'self'; img-src 'self' *; media-src *; script-src 'self' 'unsafe-eval' 'sha256-KlbEnYxSWkHOFqQh7kFtymSpvMiOLtHEL5Zq91zyyjA='; style-src 'self' https://fonts.googleapis.com; font-src *"
   );
 
   res.send(setResponse(html, preloadedState, req.hashManifest));

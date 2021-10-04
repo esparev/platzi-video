@@ -1,6 +1,5 @@
-const lists = [...state.trends, ...state.originals];
-
 const reducer = (state, action) => {
+  const lists = [...state.trends, ...state.originals];
   switch (action.type) {
     case "SET_FAVORITE":
       return {
