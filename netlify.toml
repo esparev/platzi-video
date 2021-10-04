@@ -1,3 +1,3 @@
 [build]
-  publish = "src/server"
+  publish = "src/server/public"
   command = "npm run build"
