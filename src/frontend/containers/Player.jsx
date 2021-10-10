@@ -70,6 +70,7 @@ Player.propTypes = {
   type: PropTypes.string,
   contentRating: PropTypes.string,
   year: PropTypes.number,
+  getVideoSource: PropTypes.func,
 };
 
 const mapStateToProps = (state) => {

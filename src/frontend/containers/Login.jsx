@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { loginRequest } from "../actions";
@@ -14,6 +15,8 @@ const Login = (props) => {
 
   const [form, setValues] = useState({
     email: "",
+    id: "",
+    name: "",
   });
 
   const handleInput = (event) => {
@@ -85,6 +88,10 @@ const Login = (props) => {
 
 const mapDispatchToProps = {
   loginRequest,
+};
+
+Login.propTypes = {
+  loginRequest: PropTypes.func,
 };
 
 export default connect(null, mapDispatchToProps)(Login);
