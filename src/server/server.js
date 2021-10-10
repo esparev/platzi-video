@@ -2,24 +2,38 @@ import express from "express";
 import dotenv from "dotenv";
 import webpack from "webpack";
 import helmet from "helmet";
+import cookieParser from "cookie-parser";
+import boom from "@hapi/boom";
+import passport from "passport";
+import axios from "axios";
 import React from "react";
 import { renderToString } from "react-dom/server";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import { renderRoutes } from "react-router-config";
 import { StaticRouter } from "react-router-dom";
-import serverRoutes from "../frontend/routes/ServerRoutes.js";
+import serverRoutes from "../frontend/routes/ServerRoutes";
 import reducer from "../frontend/reducers";
-import Layout from "../frontend/components/Layout.jsx";
-import initialState from "../frontend/initialState.js";
-import getManifest from "./getManifest.js";
+import Layout from "../frontend/components/Layout";
+import initialState from "../frontend/initialState";
+import getManifest from "./getManifest";
 
 // Environment configuration file
 dotenv.config();
+
 // Obtaining environment variables
 const { ENV, PORT } = process.env;
+
 // Creating express app
 const app = express();
+
+app.use(express.json());
+app.use(cookieParser());
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Basic strategy
+require("./utils/auth/strategies/basic");
 
 if (ENV === "development") {
   console.log("Development config");
@@ -125,6 +139,59 @@ const renderApp = (req, res) => {
 
   res.send(setResponse(html, preloadedState, req.hashManifest));
 };
+
+app.post("/auth/sign-in", async function (req, res, next) {
+  const { rememberMe } = req.body;
+  passport.authenticate("basic", function (error, data) {
+    try {
+      if (error || !data) {
+        next(boom.unauthorized());
+      }
+
+      req.login(data, { session: false }, async function (error) {
+        if (error) {
+          next(error);
+        }
+
+        const { token, ...user } = data;
+
+        // If rememberMe is true the expiration will be in 30 days
+        // otherwise, it will be in 2 hours
+        if (!config.dev) {
+          res.cookie("token", token, {
+            httpOnly: true,
+            secure: true,
+            maxAge: rememberMe ? THIRTY_DAYS_IN_MS : TWO_HOURS_IN_MS,
+          });
+        } else {
+          res.cookie("token", token, {
+            maxAge: rememberMe ? THIRTY_DAYS_IN_MS : TWO_HOURS_IN_MS,
+          });
+        }
+
+        res.status(200).json(user);
+      });
+    } catch (error) {
+      next(error);
+    }
+  })(req, res, next);
+});
+
+app.post("/auth/sign-up", async function (req, res, next) {
+  const { body: user } = req;
+
+  try {
+    await axios({
+      url: `${config.apiUrl}/api/auth/sign-up`,
+      method: "post",
+      data: user,
+    });
+
+    res.status(201).json({ message: "user created" });
+  } catch (error) {
+    next(error);
+  }
+});
 
 // Ensure that the server responds to all the routes
 app.get("*", renderApp);
