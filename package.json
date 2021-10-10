@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack-cli --config webpack.config.js",
+    "build": "NODE_ENV=production webpack-cli --config webpack.config.js",
     "start": "nodemon -L src/server/index.js",
     "lint": "eslint src/frontend/ --ext .js --ext .jsx --fix"
   },

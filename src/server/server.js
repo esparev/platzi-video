@@ -17,12 +17,7 @@ import reducer from "../frontend/reducers";
 import Layout from "../frontend/components/Layout";
 import initialState from "../frontend/initialState";
 import getManifest from "./getManifest";
-
-// Environment configuration file
-dotenv.config();
-
-// Obtaining environment variables
-const { ENV, PORT } = process.env;
+import { config } from "./config";
 
 // Creating express app
 const app = express();
@@ -35,7 +30,7 @@ app.use(passport.session());
 // Basic strategy
 require("./utils/auth/strategies/basic");
 
-if (ENV === "development") {
+if (config.dev) {
   console.log("Development config");
   const webpackConfig = require("../../webpack.config.dev.js");
   const webpackDevMiddleware = require("webpack-dev-middleware");
@@ -181,13 +176,21 @@ app.post("/auth/sign-up", async function (req, res, next) {
   const { body: user } = req;
 
   try {
-    await axios({
+    const userData = await axios({
       url: `${config.apiUrl}/api/auth/sign-up`,
       method: "post",
-      data: user,
+      data: {
+        email: user.email,
+        name: user.name,
+        password: user.password,
+      },
     });
 
-    res.status(201).json({ message: "user created" });
+    res.status(201).json({
+      name: req.body.name,
+      email: req.body.email,
+      id: userData.data.password,
+    });
   } catch (error) {
     next(error);
   }
@@ -196,10 +199,10 @@ app.post("/auth/sign-up", async function (req, res, next) {
 // Ensure that the server responds to all the routes
 app.get("*", renderApp);
 
-app.listen(PORT, (err) => {
+app.listen(config.port, (err) => {
   if (err) {
     console.log(err);
   } else {
-    console.log(`Server running on port ${PORT}`);
+    console.log(`Server running on port ${config.port}`);
   }
 });
