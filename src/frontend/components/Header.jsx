@@ -31,10 +31,7 @@ const Header = (props) => {
           </div>
           <ul className="header__menu--list">
             <li>
-              <Link to="/account">
-                Account
-                {user.name}
-              </Link>
+              <Link to="/account">{user.name}</Link>
             </li>
             <li>
               <Link to="/login" onClick={handleLogout}>

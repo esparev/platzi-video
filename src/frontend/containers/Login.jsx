@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { loginRequest } from "../actions";
+import { loginUser } from "../actions";
 import "../assets/styles/components/Login.scss";
 import googleIcon from "../assets/static/google-logo.png";
 import twitterIcon from "../assets/static/twitter-icon.png";
@@ -15,8 +15,6 @@ const Login = (props) => {
 
   const [form, setValues] = useState({
     email: "",
-    id: "",
-    name: "",
   });
 
   const handleInput = (event) => {
@@ -28,8 +26,7 @@ const Login = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.loginRequest(form);
-    props.history.push("/");
+    props.loginUser(form, "/");
   };
 
   return (
@@ -77,9 +74,7 @@ const Login = (props) => {
           </div>
         </div>
         <p className="login__container--register">
-          Don&apos;t have an account yet?
-          {" "}
-          <Link to="/register">Register</Link>
+          Don&apos;t have an account yet? <Link to="/register">Register</Link>
         </p>
       </div>
     </section>
@@ -87,11 +82,11 @@ const Login = (props) => {
 };
 
 const mapDispatchToProps = {
-  loginRequest,
+  loginUser,
 };
 
 Login.propTypes = {
-  loginRequest: PropTypes.func,
+  loginUser: PropTypes.func,
 };
 
 export default connect(null, mapDispatchToProps)(Login);

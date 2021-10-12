@@ -52,4 +52,37 @@ export const registerUser = (payload, redirectUrl) => {
   };
 };
 
+export const loginUser = ({ email, password }, redirectUrl) => {
+  return (dispatch) => {
+    axios({
+      url: "/auth/sign-in",
+      method: "post",
+      auth: {
+        username: email,
+        password,
+      },
+    })
+      .then(({ data }) => {
+        console.log("Data:");
+        console.log(data);
+        console.log(data.user.email);
+        console.log(data.user.name);
+        console.log(data.user.id);
+        console.log(data.user.token);
+        debugger;
+        document.cookie = `email=${data.user.email}`;
+        document.cookie = `name=${data.user.name}`;
+        document.cookie = `id=${data.user.id}`;
+        document.cookie = `token=${data.user.token}`;
+        dispatch(loginRequest(data));
+      })
+      .then(() => {
+        window.location.href = redirectUrl;
+      })
+      .catch((error) => {
+        dispatch(setError(error));
+      });
+  };
+};
+
 export { setFavorite as default };

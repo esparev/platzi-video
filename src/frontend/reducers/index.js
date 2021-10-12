@@ -38,7 +38,9 @@ const reducer = (state, action) => {
       if (action.payload === "") return { ...state, searchResult: [] };
       return {
         ...state,
-        searchResult: lists.filter((item) => item.title.toLowerCase().includes(action.payload.toLowerCase())),
+        searchResult: lists.filter((item) =>
+          item.title.toLowerCase().includes(action.payload.toLowerCase())
+        ),
       };
     default:
       return state;

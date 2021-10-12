@@ -1,5 +1,4 @@
 import express from "express";
-import dotenv from "dotenv";
 import webpack from "webpack";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
@@ -15,12 +14,14 @@ import { StaticRouter } from "react-router-dom";
 import serverRoutes from "../frontend/routes/ServerRoutes";
 import reducer from "../frontend/reducers";
 import Layout from "../frontend/components/Layout";
-import initialState from "../frontend/initialState";
 import getManifest from "./getManifest";
 import { config } from "./config";
 
 // Creating express app
 const app = express();
+
+const THIRTY_DAYS_IN_MS = 2592000000;
+const TWO_HOURS_IN_MS = 7200000;
 
 app.use(express.json());
 app.use(cookieParser());
@@ -114,15 +115,41 @@ const setResponse = (html, preloadedState, manifest) => {
  * @returns configured HTML for rendering
  */
 const renderApp = (req, res) => {
+  let initialState;
+  const { email, name, id } = req.cookies;
+
+  if (id) {
+    initialState = {
+      user: {
+        email,
+        name,
+        id,
+      },
+      myList: [],
+      trends: [],
+      originals: [],
+      searchResult: [],
+    };
+  } else {
+    initialState = {
+      user: {},
+      myList: [],
+      trends: [],
+      originals: [],
+      searchResult: [],
+    };
+  }
+
   const store = createStore(reducer, initialState);
   // Preload the initial state defined in store
   const preloadedState = store.getState();
+  const isLogged = initialState.user.id;
   // Store React elements to its initial HTML as a String for rendering
   // renderRoutes receives the array from serverRoutes
   const html = renderToString(
     <Provider store={store}>
       <StaticRouter location={req.url} context={{}}>
-        <Layout>{renderRoutes(serverRoutes)}</Layout>
+        <Layout>{renderRoutes(serverRoutes(isLogged))}</Layout>
       </StaticRouter>
     </Provider>
   );
@@ -143,31 +170,25 @@ app.post("/auth/sign-in", async function (req, res, next) {
         next(boom.unauthorized());
       }
 
-      req.login(data, { session: false }, async function (error) {
-        if (error) {
-          next(error);
+      req.login(data, { session: false }, async function (err) {
+        if (err) {
+          next(err);
         }
 
         const { token, ...user } = data;
 
         // If rememberMe is true the expiration will be in 30 days
         // otherwise, it will be in 2 hours
-        if (!config.dev) {
-          res.cookie("token", token, {
-            httpOnly: true,
-            secure: true,
-            maxAge: rememberMe ? THIRTY_DAYS_IN_MS : TWO_HOURS_IN_MS,
-          });
-        } else {
-          res.cookie("token", token, {
-            maxAge: rememberMe ? THIRTY_DAYS_IN_MS : TWO_HOURS_IN_MS,
-          });
-        }
+        res.cookie("token", token, {
+          httpOnly: !config.dev,
+          secure: !config.dev,
+          maxAge: rememberMe ? THIRTY_DAYS_IN_MS : TWO_HOURS_IN_MS,
+        });
 
         res.status(200).json(user);
       });
-    } catch (error) {
-      next(error);
+    } catch (err) {
+      next(err);
     }
   })(req, res, next);
 });
