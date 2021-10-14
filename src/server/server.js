@@ -1,21 +1,21 @@
-import express from "express";
-import webpack from "webpack";
-import helmet from "helmet";
-import cookieParser from "cookie-parser";
-import boom from "@hapi/boom";
-import passport from "passport";
-import axios from "axios";
-import React from "react";
-import { renderToString } from "react-dom/server";
-import { Provider } from "react-redux";
-import { createStore } from "redux";
-import { renderRoutes } from "react-router-config";
-import { StaticRouter } from "react-router-dom";
-import serverRoutes from "../frontend/routes/ServerRoutes";
-import reducer from "../frontend/reducers";
-import Layout from "../frontend/components/Layout";
-import getManifest from "./getManifest";
-import { config } from "./config";
+import express from 'express';
+import webpack from 'webpack';
+import helmet from 'helmet';
+import cookieParser from 'cookie-parser';
+import boom from '@hapi/boom';
+import passport from 'passport';
+import axios from 'axios';
+import React from 'react';
+import { renderToString } from 'react-dom/server';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import { renderRoutes } from 'react-router-config';
+import { StaticRouter } from 'react-router-dom';
+import serverRoutes from '../frontend/routes/ServerRoutes';
+import reducer from '../frontend/reducers';
+import Layout from '../frontend/components/Layout';
+import getManifest from './getManifest';
+import { config } from './config';
 
 // Creating express app
 const app = express();
@@ -29,13 +29,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Basic strategy
-require("./utils/auth/strategies/basic");
+require('./utils/auth/strategies/basic');
 
 if (config.dev) {
-  console.log("Development config");
-  const webpackConfig = require("../../webpack.config.dev.js");
-  const webpackDevMiddleware = require("webpack-dev-middleware");
-  const webpackHotMiddleware = require("webpack-hot-middleware");
+  console.log('Development config');
+  const webpackConfig = require('../../webpack.config.dev.js');
+  const webpackDevMiddleware = require('webpack-dev-middleware');
+  const webpackHotMiddleware = require('webpack-hot-middleware');
   // Creating a webpack compiler with its configurations
   const compiler = webpack(webpackConfig);
   const serverConfig = {
@@ -67,7 +67,7 @@ if (config.dev) {
   Disables the header that shows information about the server
   our app is connected to
   */
-  app.disable("x-powered-by");
+  app.disable('x-powered-by');
 }
 
 /**
@@ -76,9 +76,9 @@ if (config.dev) {
  * @returns initial HTML as a string
  */
 const setResponse = (html, preloadedState, manifest) => {
-  const mainStyles = manifest ? manifest["vendors.css"] : "assets/app.css";
-  const mainBuild = manifest ? manifest["main.js"] : "assets/app.js";
-  const vendorBuild = manifest ? manifest["vendors.js"] : "assets/vendor.js";
+  const mainStyles = manifest ? manifest['vendors.css'] : 'assets/app.css';
+  const mainBuild = manifest ? manifest['main.js'] : 'assets/app.js';
+  const vendorBuild = manifest ? manifest['vendors.js'] : 'assets/vendor.js';
 
   return `
   <!DOCTYPE html>
@@ -99,8 +99,9 @@ const setResponse = (html, preloadedState, manifest) => {
       <script>
         window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(
           /</g,
-          "\\u003c"
+          '\\u003c'
         )}
+        console.log(window.__PRELOADED_STATE__);
       </script>
       <script src=${mainBuild} type="text/javascript"></script>
       <script src=${vendorBuild} type="text/javascript"></script>
@@ -114,23 +115,35 @@ const setResponse = (html, preloadedState, manifest) => {
  * @param {*} res - response
  * @returns configured HTML for rendering
  */
-const renderApp = (req, res) => {
+const renderApp = async (req, res) => {
   let initialState;
-  const { email, name, id } = req.cookies;
+  const { token, email, name, id } = req.cookies;
 
-  if (id) {
+  try {
+    let movieList = await axios({
+      url: `${config.apiUrl}/api/movies`,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      method: 'get',
+    });
+    movieList = movieList.data.data;
     initialState = {
       user: {
+        id,
         email,
         name,
-        id,
       },
       myList: [],
-      trends: [],
-      originals: [],
+      trends: movieList.filter(
+        (movie) => movie.contentRating === 'PG' && movie._id
+      ),
+      originals: movieList.filter(
+        (movie) => movie.contentRating === 'G' && movie._id
+      ),
       searchResult: [],
     };
-  } else {
+  } catch (error) {
     initialState = {
       user: {},
       myList: [],
@@ -155,16 +168,16 @@ const renderApp = (req, res) => {
   );
 
   res.set(
-    "Content-Security-Policy",
+    'Content-Security-Policy',
     "default-src 'self'; img-src 'self' *; media-src *; script-src 'self' 'unsafe-eval' 'sha256-KlbEnYxSWkHOFqQh7kFtymSpvMiOLtHEL5Zq91zyyjA='; style-src 'self' https://fonts.googleapis.com; font-src *"
   );
 
   res.send(setResponse(html, preloadedState, req.hashManifest));
 };
 
-app.post("/auth/sign-in", async function (req, res, next) {
+app.post('/auth/sign-in', async function (req, res, next) {
   const { rememberMe } = req.body;
-  passport.authenticate("basic", function (error, data) {
+  passport.authenticate('basic', function (error, data) {
     try {
       if (error || !data) {
         next(boom.unauthorized());
@@ -177,9 +190,12 @@ app.post("/auth/sign-in", async function (req, res, next) {
 
         const { token, ...user } = data;
 
+        console.log('RememberMe:');
+        console.log(rememberMe);
+
         // If rememberMe is true the expiration will be in 30 days
         // otherwise, it will be in 2 hours
-        res.cookie("token", token, {
+        res.cookie('token', token, {
           httpOnly: !config.dev,
           secure: !config.dev,
           maxAge: rememberMe ? THIRTY_DAYS_IN_MS : TWO_HOURS_IN_MS,
@@ -193,13 +209,13 @@ app.post("/auth/sign-in", async function (req, res, next) {
   })(req, res, next);
 });
 
-app.post("/auth/sign-up", async function (req, res, next) {
+app.post('/auth/sign-up', async function (req, res, next) {
   const { body: user } = req;
 
   try {
     const userData = await axios({
       url: `${config.apiUrl}/api/auth/sign-up`,
-      method: "post",
+      method: 'post',
       data: {
         email: user.email,
         name: user.name,
@@ -218,7 +234,7 @@ app.post("/auth/sign-up", async function (req, res, next) {
 });
 
 // Ensure that the server responds to all the routes
-app.get("*", renderApp);
+app.get('*', renderApp);
 
 app.listen(config.port, (err) => {
   if (err) {

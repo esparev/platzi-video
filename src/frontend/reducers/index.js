@@ -1,5 +1,4 @@
 const reducer = (state, action) => {
-  const lists = [...state.trends, ...state.originals];
   switch (action.type) {
     case "SET_FAVORITE":
       return {
@@ -36,6 +35,7 @@ const reducer = (state, action) => {
       };
     case "GET_SEARCH_RESULT":
       if (action.payload === "") return { ...state, searchResult: [] };
+      const lists = [...state.trends, ...state.originals];
       return {
         ...state,
         searchResult: lists.filter((item) =>
