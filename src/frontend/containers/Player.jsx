@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
-import { Redirect } from "react-router";
-import PropTypes from "prop-types";
-import { getVideoSource } from "../actions";
-import "../assets/styles/components/Player.scss";
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router';
+import PropTypes from 'prop-types';
+import { getVideoSource } from '../actions';
+import '../assets/styles/components/Player.scss';
 
 const Player = (props) => {
   const { match, playing } = props;
@@ -16,49 +16,35 @@ const Player = (props) => {
   }, [playing.title]);
 
   return hasPlaying ? (
-    <div className="player">
+    <div className='player'>
       <video controls autoPlay>
-        <source src={playing.source} type="video/mp4" />
+        <source src={playing.source} type='video/mp4' />
       </video>
-      <div className="player__info">
-        <h1 className="player__title--main">{playing.title}</h1>
-        <p className="player__info--description">{playing.description}</p>
-        <h2 className="player__about--title">About</h2>
-        <ul className="player__about">
-          <li className="player__about--info">
-            Duration:
-            {" "}
-            <strong>
-              {playing.duration}
-              {" "}
-              minutes
-            </strong>
+      <div className='player__info'>
+        <h1 className='player__title--main'>{playing.title}</h1>
+        <p className='player__info--description'>{playing.description}</p>
+        <h2 className='player__about--title'>About</h2>
+        <ul className='player__about'>
+          <li className='player__about--info'>
+            Duration: <strong>{playing.duration} minutes</strong>
           </li>
-          <li className="player__about--info">
-            Language:
-            {" "}
-            <strong>{playing.language}</strong>
+          <li className='player__about--info'>
+            Language: <strong>{playing.language}</strong>
           </li>
-          <li className="player__about--info">
-            Genre:
-            {" "}
-            <strong>{playing.type}</strong>
+          <li className='player__about--info'>
+            Genre: <strong>{playing.type}</strong>
           </li>
-          <li className="player__about--info">
-            Rating:
-            {" "}
-            <strong>{playing.contentRating}</strong>
+          <li className='player__about--info'>
+            Rating: <strong>{playing.contentRating}</strong>
           </li>
-          <li className="player__about--info">
-            Year:
-            {" "}
-            <strong>{playing.year}</strong>
+          <li className='player__about--info'>
+            Year: <strong>{playing.year}</strong>
           </li>
         </ul>
       </div>
     </div>
   ) : (
-    setTimeout(<Redirect to="/404" />, 3000)
+    setTimeout(<Redirect to='/404' />, 3000)
   );
 };
 

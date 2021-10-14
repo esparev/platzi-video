@@ -1,20 +1,20 @@
-import React, { useEffect } from "react";
-import notFoundImg from "../assets/static/404-error.svg";
-import "../assets/styles/components/NotFound.scss";
+import React, { useEffect } from 'react';
+import notFoundImg from '../assets/static/404-error.svg';
+import '../assets/styles/components/NotFound.scss';
 
 const NotFound = () => {
   useEffect(() => {
-    document.title = "PlatziVideo • Not Found";
+    document.title = 'PlatziVideo • Not Found';
   }, []);
 
   return (
-    <section className="not-found">
+    <section className='not-found'>
       <img
-        className="not-found__img"
+        className='not-found__img'
         src={notFoundImg}
-        alt="404 Error Not Found"
+        alt='404 Error Not Found'
       />
-      <h2 className="not-found__title">Page Not Found</h2>
+      <h2 className='not-found__title'>Page Not Found</h2>
     </section>
   );
 };

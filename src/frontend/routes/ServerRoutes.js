@@ -1,33 +1,33 @@
-import Home from "../containers/Home";
-import Login from "../containers/Login";
-import Register from "../containers/Register";
-import NotFound from "../containers/NotFound";
-import Player from "../containers/Player";
+import Home from '../containers/Home';
+import Login from '../containers/Login';
+import Register from '../containers/Register';
+import NotFound from '../containers/NotFound';
+import Player from '../containers/Player';
 
 const serverRoutes = (isLogged) => {
   return [
     {
       exact: true,
-      path: "/",
+      path: '/',
       component: isLogged ? Home : Login,
     },
     {
       exact: true,
-      path: "/login",
+      path: '/login',
       component: Login,
     },
     {
       exact: true,
-      path: "/register",
+      path: '/register',
       component: Register,
     },
     {
-      name: "NotFound",
+      name: 'NotFound',
       component: NotFound,
     },
     {
       exact: true,
-      path: "/player/:id",
+      path: '/player/:id',
       component: isLogged ? Player : Login,
     },
   ];

@@ -1,7 +1,7 @@
-import React from "react";
-import { connect } from "react-redux";
-import { getSearchResult } from "../actions";
-import "../assets/styles/components/Search.scss";
+import React from 'react';
+import { connect } from 'react-redux';
+import { getSearchResult } from '../actions';
+import '../assets/styles/components/Search.scss';
 
 const Search = (props) => {
   const { getSearchResult } = props;
@@ -10,13 +10,13 @@ const Search = (props) => {
     getSearchResult(event.target.value);
   };
   return (
-    <section className="main">
-      <h2 className="main__title">What do you want to watch today?</h2>
+    <section className='main'>
+      <h2 className='main__title'>What do you want to watch today?</h2>
       <input
-        name="search"
-        className="input"
-        type="text"
-        placeholder="Search..."
+        name='search'
+        className='input'
+        type='text'
+        placeholder='Search...'
         onKeyUp={handleInput}
       />
     </section>
